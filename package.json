@@ -1,0 +1,28 @@
+{
+  "name": "adash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "compile": "rm -f index.* && babel ./src -d ./ --ignore node_modules,src/index.test.js",
+    "prepublish": "npm run compile"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "./node_modules/babel-jest"
+    },
+    "testRegex": ".*\\.test\\.js$"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "21.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-jest": "21.2.0",
+    "babel-preset-env": "1.6.1"
+  }
+}

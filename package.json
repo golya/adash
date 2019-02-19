@@ -1,6 +1,6 @@
 {
   "name": "adash",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,9 @@
     "transform": {
       "^.+\\.js$": "./node_modules/babel-jest"
     },
-    "setupFiles": ["<rootDir>/node_modules/regenerator-runtime/runtime"],
+    "setupFiles": [
+      "<rootDir>/node_modules/regenerator-runtime/runtime"
+    ],
     "testRegex": ".*\\.test\\.js$"
   },
   "author": "",

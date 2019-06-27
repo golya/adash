@@ -3,7 +3,8 @@ import _ from 'lodash';
 export default Object.freeze({
   true: tilltrue,
   lastValid,
-  first
+  first,
+  select
 });
 
 export async function tilltrue(elements, ...parameters) {
@@ -47,3 +48,13 @@ export async function first(elements, ...parameters) {
   }
   return await first(tail, ...parameters);
 }
+
+export async function select(condition, value1, value2) {
+  const result = condition ? value1 : value2;
+
+  if (_.isFunction(result)) {
+    return await result();
+  }
+
+  return result;
+};

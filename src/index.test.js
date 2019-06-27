@@ -89,5 +89,22 @@ describe('adash', () => {
       const result = await __.first([taskA, taskB], 40, 2);
       expect(result).toEqual(42);
     });
-  })
+  });
+
+  describe('__.select', () => {
+    it('should select the true case', async() => {
+      const result = await __.select(true, 'A', 'B');
+      expect(result).toEqual('A');
+    });
+    it('should select the false case', async() => {
+      const result = await __.select(false, 'A', 'B');
+      expect(result).toEqual('B');
+    });
+    it('should select the false case', async() => {
+      const taskA = async () => await Promise.resolve('A');
+      const taskB = async () => await Promise.resolve('B');
+      const functionResult = await __.select(true, taskA, taskB);
+      expect(functionResult).toEqual('A');
+    });
+  });
 });
